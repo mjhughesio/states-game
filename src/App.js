@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import Header from "./components/Header";
 import UserForm from "./components/UserForm";
+import DisplayResults from "./components/DisplayResults";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Header />
       <main className="container">
         <UserForm />
+        <DisplayResults />
       </main>
     </Fragment>
   );

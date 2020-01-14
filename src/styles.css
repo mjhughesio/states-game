@@ -93,6 +93,27 @@ form {
   background-color: rgb(250, 139, 99);
 }
 
+/***** DISPLAY *****/
+
+.state-container {
+  margin: auto;
+  width: 80%;
+  padding: 2rem;
+  text-align: left;
+}
+
+.state-check {
+  color: green;
+  font-size: 1.5rem;
+}
+
+.state-name {
+  display: inline-block;
+  margin: 0;
+  padding: 1rem;
+  font-weight: 800;
+}
+
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   .container {
