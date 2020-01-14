@@ -1,9 +1,8 @@
-import React, { Fragment, useState, useRef } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-const UserForm = ({ getAnswer }) => {
+const UserForm = ({ getAnswer, textBoxRef, isTimeRunning }) => {
   const [answer, setAnswer] = useState("");
-  const textBoxRef = useRef(null);
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -13,9 +12,9 @@ const UserForm = ({ getAnswer }) => {
   };
 
   return (
-    <Fragment>
+    <div className="form-container">
       <form onSubmit={e => handleSubmit(e)}>
-        <h4 className="form-title">Please enter the name of a state</h4>
+        <h4 className="form-title">How you doin? Guess a state!</h4>
         <input
           className="form-field"
           ref={textBoxRef}
@@ -23,17 +22,22 @@ const UserForm = ({ getAnswer }) => {
           name="answer"
           value={answer}
           onChange={e => setAnswer(e.target.value)}
+          disabled={!isTimeRunning}
           required
         />
         <small className="form-subtitle">Answers are NOT case sensitive</small>
-        <button className="form-btn">SUBMIT</button>
+        <button className="form-btn-submit" disabled={!isTimeRunning}>
+          SUBMIT
+        </button>
       </form>
-    </Fragment>
+    </div>
   );
 };
 
 UserForm.propTypes = {
   getAnswer: PropTypes.func.isRequired,
+  textBoxRef: PropTypes.object.isRequired,
+  isTimeRunning: PropTypes.bool.isRequired,
 };
 
 export default UserForm;
