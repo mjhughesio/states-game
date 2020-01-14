@@ -1,0 +1,58 @@
+/***** FULL PAGE *****/
+/*********************/
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/***** BODY *****/
+/****************/
+
+body {
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  background-color: whitesmoke;
+}
+
+/***** HEADER *****/
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(225, 225, 225);
+  padding: 0.8rem;
+  height: 100%;
+}
+
+.header-title {
+  font-size: 1rem;
+  margin-top: 1.4rem;
+}
+
+.header-logo {
+  color: rgb(255, 104, 50);
+  font-size: 2rem;
+  margin: 0 0.75rem 0 0;
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  header {
+    justify-content: left;
+  }
+  .header-title {
+    margin-top: 2.5rem;
+    font-size: 1.75rem;
+  }
+  .header-logo {
+    font-size: 3.5rem;
+    margin: 0 1rem 0 2rem;
+  }
+}
