@@ -23,6 +23,10 @@ body {
 .container {
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-areas:
+    "form"
+    "clock"
+    "results";
   width: 80%;
   margin: auto;
   padding-top: 1.5rem;
@@ -53,6 +57,10 @@ header {
 
 /***** FORM *****/
 
+.form-container {
+  grid-area: form;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -77,11 +85,11 @@ form {
   font-style: italic;
 }
 
-.form-btn {
+.form-btn-start,
+.form-btn-submit {
   width: 35%;
   margin: 0.75rem auto 0;
   padding: 0.5rem;
-  background-color: rgb(254, 119, 70);
   font-size: 0.75rem;
   font-weight: 800;
   cursor: pointer;
@@ -89,22 +97,44 @@ form {
   letter-spacing: 0.1rem;
 }
 
-.form-btn:hover {
+.form-btn-start {
+  background-color: rgb(67, 227, 115);
+}
+
+.form-btn-start:hover {
+  background-color: rgb(85, 240, 132);
+}
+
+.form-btn-submit {
+  background-color: rgb(254, 119, 70);
+}
+
+.form-btn-submit:hover {
   background-color: rgb(250, 139, 99);
+}
+
+.form-btn-submit:disabled,
+.form-btn-start:disabled {
+  cursor: not-allowed;
+}
+
+/***** CLOCK *****/
+
+.clock-container {
+  grid-area: clock;
 }
 
 /***** DISPLAY *****/
 
 .state-container {
-  margin: auto;
-  width: 80%;
-  padding: 2rem;
-  text-align: left;
+  grid-area: results;
+  border-top: 1px solid black;
+  text-align: center;
 }
 
 .state-check {
   color: green;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 .state-name {
@@ -112,12 +142,16 @@ form {
   margin: 0;
   padding: 1rem;
   font-weight: 800;
+  text-transform: capitalize;
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   .container {
     grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "form results"
+      "clock results";
     text-align: left;
   }
   header {
@@ -135,8 +169,12 @@ form {
     margin: 0;
     text-align: left;
   }
-  .form-btn {
+  .form-btn-start,
+  .form-btn-submit {
     width: 22.5%;
     margin: 0.5rem 0;
+  }
+  .state-container {
+    border-top: none;
   }
 }
