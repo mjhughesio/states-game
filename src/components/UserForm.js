@@ -1,14 +1,15 @@
 import React, { Fragment, useState, useRef } from "react";
+import PropTypes from "prop-types";
 
-const UserForm = () => {
+const UserForm = ({ getAnswer }) => {
   const [answer, setAnswer] = useState("");
   const textBoxRef = useRef(null);
 
   const handleSubmit = e => {
     e.preventDefault();
-    const answerLC = answer.toLowerCase();
-    console.log(answerLC);
+    getAnswer(answer.toLowerCase());
     setAnswer("");
+    textBoxRef.current.focus();
   };
 
   return (
@@ -29,6 +30,10 @@ const UserForm = () => {
       </form>
     </Fragment>
   );
+};
+
+UserForm.propTypes = {
+  getAnswer: PropTypes.func.isRequired,
 };
 
 export default UserForm;
