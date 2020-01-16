@@ -3,10 +3,9 @@ import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 
-const DisplayResults = ({ userAnswers, timeRemaining }) => {
+const DisplayResults = ({ userAnswers }) => {
   return (
     <div className="state-container">
-      {timeRemaining === 0 && <h3>You guessed {userAnswers.length} states!</h3>}
       {userAnswers.map((state, index) => (
         <div key={index} className="state-item">
           <FontAwesomeIcon icon={faCheckCircle} className="state-check" />
@@ -19,7 +18,6 @@ const DisplayResults = ({ userAnswers, timeRemaining }) => {
 
 DisplayResults.propTypes = {
   userAnswers: PropTypes.array.isRequired,
-  timeRemaining: PropTypes.number.isRequired,
 };
 
 export default DisplayResults;
