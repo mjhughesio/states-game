@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 
-const QuizLogic = (startingTime = 10) => {
+const QuizLogic = (startingTime = 360) => {
   const [timeRemaining, setTimeRemaining] = useState(startingTime);
   const [isTimeRunning, setIsTimeRunning] = useState(false);
   const textBoxRef = useRef(null);
