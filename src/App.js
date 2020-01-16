@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment } from "react";
 import Header from "./components/Header";
 import UserForm from "./components/UserForm";
 import StartClock from "./components/StartClock";
@@ -8,8 +8,14 @@ import QuizLogic from "./components/QuizLogic";
 import resultsList from "./resultsList";
 
 const App = () => {
-  const { timeRemaining, isTimeRunning, startGame, textBoxRef } = QuizLogic();
-  const [userAnswers, setUserAnswers] = useState([]);
+  const {
+    userAnswers,
+    setUserAnswers,
+    timeRemaining,
+    isTimeRunning,
+    startGame,
+    textBoxRef,
+  } = QuizLogic();
 
   const getAnswer = answer => {
     if (resultsList.includes(answer) && !userAnswers.includes(answer)) {
@@ -38,7 +44,11 @@ const App = () => {
           startGame={startGame}
           isTimeRunning={isTimeRunning}
         />
-        <TotalStates timeRemaining={timeRemaining} userAnswers={userAnswers} />
+        <TotalStates
+          isTimeRunning={isTimeRunning}
+          timeRemaining={timeRemaining}
+          userAnswers={userAnswers}
+        />
         <DisplayResults
           userAnswers={userAnswers}
           timeRemaining={timeRemaining}
