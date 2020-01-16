@@ -24,13 +24,13 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas:
-    "form"
     "clock"
+    "form"
     "total"
     "results";
   width: 88%;
   margin: auto;
-  padding-top: 1.5rem;
+  padding-top: 2.5rem;
   text-align: center;
 }
 
@@ -41,7 +41,7 @@ header {
   justify-content: center;
   align-items: center;
   background: rgb(225, 225, 225);
-  padding: 1.4rem;
+  padding: 1.5rem;
   height: 100%;
 }
 
@@ -61,10 +61,32 @@ header {
   margin: 0 0.75rem 0 0;
 }
 
+/***** CLOCK *****/
+
+.clock-container {
+  grid-area: clock;
+}
+
+.clock-title {
+  margin: 0;
+}
+
+.clock-time {
+  margin-top: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.clock-color {
+  color: rgb(254, 119, 70);
+}
+
 /***** FORM *****/
 
 .form-container {
   grid-area: form;
+  margin: 2rem 0;
+  padding-top: 1rem;
+  border-top: 1px solid black;
 }
 
 form {
@@ -94,7 +116,6 @@ form {
 .form-btn-start,
 .form-btn-submit {
   width: 35%;
-  margin: 0.75rem auto 0;
   padding: 0.5rem;
   font-size: 0.75rem;
   font-weight: 800;
@@ -105,6 +126,7 @@ form {
 
 .form-btn-start {
   background-color: rgb(67, 227, 115);
+  margin: auto;
 }
 
 .form-btn-start:hover {
@@ -113,6 +135,7 @@ form {
 
 .form-btn-submit {
   background-color: rgb(254, 119, 70);
+  margin: 0.75rem auto 0;
 }
 
 .form-btn-submit:hover {
@@ -122,27 +145,6 @@ form {
 .form-btn-submit:disabled,
 .form-btn-start:disabled {
   cursor: not-allowed;
-}
-
-/***** CLOCK *****/
-
-.clock-container {
-  grid-area: clock;
-}
-
-.clock-title {
-  margin-top: 2rem;
-  margin-bottom: 0;
-}
-
-.clock-time {
-  margin-top: 0.5rem;
-  margin-bottom: 2rem;
-  font-size: 1.25rem;
-}
-
-.clock-color {
-  color: rgb(254, 119, 70);
 }
 
 /***** TOTAL *****/
@@ -193,14 +195,16 @@ form {
   .container {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
-      "form total"
-      "form results"
+      "clock total"
       "clock results"
+      "form results"
       ". results";
     text-align: left;
+    padding-top: 3rem;
   }
   header {
     justify-content: left;
+    padding: 1.6rem 2.25rem;
   }
   .header-old-title {
     margin: 0.5rem 0 0;
@@ -213,6 +217,9 @@ form {
     font-size: 3.5rem;
     margin: 0 1rem 0 2rem;
   }
+  .clock-time {
+    margin-bottom: 0.5rem;
+  }
   .form-field {
     margin: 0;
     text-align: left;
@@ -222,8 +229,15 @@ form {
     width: 22.5%;
     margin: 0.5rem 0;
   }
-  .total-container {
+  .total-container,
+  .form-container {
     border: none;
+  }
+  .form-container {
+    margin: 1rem 0;
+  }
+  .total-title {
+    margin: 0;
   }
   .state-container {
     padding-top: 0;
