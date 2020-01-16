@@ -6,7 +6,7 @@ const UserForm = ({ getAnswer, textBoxRef, isTimeRunning }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    getAnswer(answer.toLowerCase());
+    getAnswer(answer.trim(" ").toLowerCase());
     setAnswer("");
     textBoxRef.current.focus();
   };
