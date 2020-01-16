@@ -5,29 +5,39 @@ const TotalStates = ({ isTimeRunning, timeRemaining, userAnswers }) => {
   let motivation;
   let color;
   if (!isTimeRunning && userAnswers.length === 0) {
-    motivation = "Are you ready to get started?";
+    motivation = "Let's get started!";
   } else if (isTimeRunning && userAnswers.length === 0) {
     motivation = "Here we go! Good luck!";
   } else if (isTimeRunning && userAnswers.length < 10) {
     motivation = "Great start! Keep going!";
   } else if (isTimeRunning && userAnswers.length < 20) {
-    motivation = "Nice! Double digits!";
+    motivation = "Nice! Double digits! It's insanely easy, huh?";
   } else if (isTimeRunning && userAnswers.length < 30) {
-    motivation = "In the 20's now! Well done!";
+    motivation = "In the 20's now! Have you tried South Oregon yet?";
+  } else if (isTimeRunning && userAnswers.length < 36) {
+    motivation = "The dirty 30's! Try New England. They have a sports team!";
+  } else if (isTimeRunning && userAnswers.length < 37) {
+    motivation = "Fourteen states to go. Remember, WE care about the Dakotas!";
   } else if (isTimeRunning && userAnswers.length < 40) {
-    motivation = "The dirty 30's! Keep going!";
+    motivation = "Can you get all 50 before dinner?";
   } else if (isTimeRunning && userAnswers.length < 45) {
     motivation = "Over the hill! Almost there!";
+  } else if (isTimeRunning && userAnswers.length < 49) {
+    motivation =
+      "Look, if you don't know them by now, you will never know them, okay?";
   } else if (isTimeRunning && userAnswers.length < 50) {
-    motivation = "So close! We believe!";
-  } else if (isTimeRunning && userAnswers.length === 50) {
-    motivation = "CONGRATULATIONS!";
+    motivation = "Don't listen to Ross. There IS one more!";
+  } else if (userAnswers.length === 50) {
+    motivation =
+      "CONGRATULATIONS! You are the new champ of Chandler's dumb states game!";
     color = "green";
   }
 
   let tracker;
   if (timeRemaining === 0) {
     tracker = `Time's up! That's ${userAnswers.length} states!`;
+  } else if (timeRemaining === 360) {
+    tracker = "FYI. There's only 50 states, not 56.";
   } else {
     tracker = `You've guessed ${userAnswers.length} / 50 states!`;
   }
