@@ -14,7 +14,7 @@ const UserForm = ({ getAnswer, textBoxRef, isTimeRunning }) => {
   return (
     <div className="form-container">
       <form onSubmit={e => handleSubmit(e)}>
-        <h4 className="form-title">How you doin? Guess a state!</h4>
+        <h4 className="form-title">Can you name all of the states?</h4>
         <input
           className="form-field"
           ref={textBoxRef}
@@ -25,7 +25,9 @@ const UserForm = ({ getAnswer, textBoxRef, isTimeRunning }) => {
           disabled={!isTimeRunning}
           required
         />
-        <small className="form-subtitle">Answers are NOT case sensitive</small>
+        <small className="form-subtitle">
+          Types of celery are NOT permitted
+        </small>
         <button className="form-btn-submit" disabled={!isTimeRunning}>
           SUBMIT
         </button>
