@@ -2,6 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const StartClock = ({ timeRemaining, startGame, isTimeRunning }) => {
+  const minutes = Math.floor(timeRemaining / 60);
+  const seconds = timeRemaining - minutes * 60;
+
   return (
     <div className="clock-container">
       <button
@@ -11,7 +14,16 @@ const StartClock = ({ timeRemaining, startGame, isTimeRunning }) => {
       >
         START
       </button>
-      <h2>Time Remaining: {timeRemaining}</h2>
+      <h2 className="clock-title">Time Remaining:</h2>
+      {timeRemaining > 59 ? (
+        <p className="clock-time">
+          {minutes} minute(s) and {seconds} second(s)
+        </p>
+      ) : (
+        <p className="clock-time clock-color">
+          {minutes} minute(s) and {seconds} second(s)
+        </p>
+      )}
     </div>
   );
 };
