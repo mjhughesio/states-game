@@ -41,18 +41,23 @@ header {
   justify-content: center;
   align-items: center;
   background: rgb(225, 225, 225);
-  padding: 0.8rem;
+  padding: 1.4rem;
   height: 100%;
 }
 
-.header-title {
+.header-old-title {
+  font-size: 0.25rem;
+  text-decoration: line-through;
+}
+
+.header-new-title {
   font-size: 1rem;
-  margin-top: 1.4rem;
+  margin: 0;
 }
 
 .header-logo {
   color: rgb(255, 104, 50);
-  font-size: 2rem;
+  font-size: 2.25rem;
   margin: 0 0.75rem 0 0;
 }
 
@@ -126,11 +131,13 @@ form {
 }
 
 .clock-title {
+  margin-top: 2rem;
   margin-bottom: 0;
 }
 
 .clock-time {
   margin-top: 0.5rem;
+  margin-bottom: 2rem;
   font-size: 1.25rem;
 }
 
@@ -187,6 +194,7 @@ form {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
       "form total"
+      "form results"
       "clock results"
       ". results";
     text-align: left;
@@ -194,9 +202,12 @@ form {
   header {
     justify-content: left;
   }
-  .header-title {
-    margin-top: 2.5rem;
-    font-size: 1.75rem;
+  .header-old-title {
+    margin: 0.5rem 0 0;
+    font-size: 0.6rem;
+  }
+  .header-new-title {
+    font-size: 1.6rem;
   }
   .header-logo {
     font-size: 3.5rem;
