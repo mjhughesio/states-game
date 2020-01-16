@@ -15,6 +15,7 @@ const App = () => {
     isTimeRunning,
     startGame,
     textBoxRef,
+    startingTime,
   } = QuizLogic();
 
   const getAnswer = answer => {
@@ -22,11 +23,9 @@ const App = () => {
       const newAnswers = [answer, ...userAnswers];
       setUserAnswers(newAnswers.sort());
     } else if (userAnswers.includes(answer)) {
-      alert(
-        `${answer.toUpperCase()} has already been guessed! Please try again!`
-      );
+      alert(`${answer.toUpperCase()} has already been guessed! Pivot!`);
     } else if (!resultsList.includes(answer)) {
-      alert(`${answer.toUpperCase()} is not a U.S. state. Please try again!`);
+      alert(`${answer.toUpperCase()}?! That's not even a word!`);
     }
   };
 
@@ -48,6 +47,7 @@ const App = () => {
           isTimeRunning={isTimeRunning}
           timeRemaining={timeRemaining}
           userAnswers={userAnswers}
+          startingTime={startingTime}
         />
         <DisplayResults
           userAnswers={userAnswers}
