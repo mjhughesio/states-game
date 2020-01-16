@@ -6,7 +6,12 @@ const Header = () => {
   return (
     <header>
       <FontAwesomeIcon icon={faCouch} className="header-logo" />
-      <h1 className="header-title">The One With The 50 States</h1>
+      <div>
+        <h1 className="header-old-title">
+          The One Where Chandler Doesn't Like Dogs
+        </h1>
+        <h1 className="header-new-title">The One With The States</h1>
+      </div>
     </header>
   );
 };
