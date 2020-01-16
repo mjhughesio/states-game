@@ -26,8 +26,9 @@ body {
   grid-template-areas:
     "form"
     "clock"
+    "total"
     "results";
-  width: 80%;
+  width: 88%;
   margin: auto;
   padding-top: 1.5rem;
   text-align: center;
@@ -124,24 +125,59 @@ form {
   grid-area: clock;
 }
 
+.clock-title {
+  margin-bottom: 0;
+}
+
+.clock-time {
+  margin-top: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.clock-color {
+  color: rgb(254, 119, 70);
+}
+
+/***** TOTAL *****/
+
+.total-container {
+  grid-area: total;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
 /***** DISPLAY *****/
 
 .state-container {
   grid-area: results;
-  border-top: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: baseline;
   text-align: center;
+  height: 65vh;
+  padding-top: 1rem;
+  margin-bottom: 5rem;
+}
+
+.state-item {
+  display: flex;
+  flex-basis: auto;
+  align-items: center;
 }
 
 .state-check {
   color: green;
-  font-size: 1.25rem;
+  margin-left: 0.25rem;
+  font-size: 0.7rem;
 }
 
 .state-name {
   display: inline-block;
   margin: 0;
-  padding: 1rem;
+  padding: 0.5rem;
   font-weight: 800;
+  font-size: 0.7rem;
   text-transform: capitalize;
 }
 
@@ -150,8 +186,9 @@ form {
   .container {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
-      "form results"
-      "clock results";
+      "form total"
+      "clock results"
+      ". results";
     text-align: left;
   }
   header {
@@ -174,7 +211,10 @@ form {
     width: 22.5%;
     margin: 0.5rem 0;
   }
+  .total-container {
+    border: none;
+  }
   .state-container {
-    border-top: none;
+    padding-top: 0;
   }
 }
