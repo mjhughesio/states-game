@@ -35,6 +35,7 @@ const QuizLogic = (startingTime = 360) => {
     isTimeRunning,
     startGame,
     textBoxRef,
+    startingTime,
   };
 };
 
