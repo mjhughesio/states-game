@@ -7,13 +7,6 @@ const StartClock = ({ timeRemaining, startGame, isTimeRunning }) => {
 
   return (
     <div className="clock-container">
-      <button
-        onClick={startGame}
-        className="form-btn-start"
-        disabled={isTimeRunning}
-      >
-        START
-      </button>
       <h2 className="clock-title">Time Remaining:</h2>
       {timeRemaining > 59 ? (
         <p className="clock-time">
@@ -24,6 +17,13 @@ const StartClock = ({ timeRemaining, startGame, isTimeRunning }) => {
           {minutes} minute(s) and {seconds} second(s)
         </p>
       )}
+      <button
+        onClick={startGame}
+        className="form-btn-start"
+        disabled={isTimeRunning}
+      >
+        START
+      </button>
     </div>
   );
 };
