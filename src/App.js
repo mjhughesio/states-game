@@ -2,6 +2,7 @@ import React, { Fragment, useState } from "react";
 import Header from "./components/Header";
 import UserForm from "./components/UserForm";
 import StartClock from "./components/StartClock";
+import TotalStates from "./components/TotalStates";
 import DisplayResults from "./components/DisplayResults";
 import QuizLogic from "./components/QuizLogic";
 import resultsList from "./resultsList";
@@ -37,6 +38,7 @@ const App = () => {
           startGame={startGame}
           isTimeRunning={isTimeRunning}
         />
+        <TotalStates timeRemaining={timeRemaining} userAnswers={userAnswers} />
         <DisplayResults
           userAnswers={userAnswers}
           timeRemaining={timeRemaining}
