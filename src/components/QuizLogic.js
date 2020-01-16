@@ -19,11 +19,11 @@ const QuizLogic = (startingTime = 360) => {
   };
 
   useEffect(() => {
-    if (isTimeRunning && timeRemaining > 0) {
+    if (userAnswers.length < 50 && isTimeRunning && timeRemaining > 0) {
       setTimeout(() => {
         setTimeRemaining(time => time - 1);
       }, 1000);
-    } else if (timeRemaining === 0) {
+    } else {
       endGame();
     }
   }, [timeRemaining, isTimeRunning]);
