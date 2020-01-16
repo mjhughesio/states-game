@@ -14,7 +14,7 @@ const App = () => {
   const getAnswer = answer => {
     if (resultsList.includes(answer) && !userAnswers.includes(answer)) {
       const newAnswers = [answer, ...userAnswers];
-      setUserAnswers(newAnswers);
+      setUserAnswers(newAnswers.sort());
     } else if (userAnswers.includes(answer)) {
       alert(
         `${answer.toUpperCase()} has already been guessed! Please try again!`
