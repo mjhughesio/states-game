@@ -1,7 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const TotalStates = ({ isTimeRunning, timeRemaining, userAnswers }) => {
+const TotalStates = ({
+  isTimeRunning,
+  timeRemaining,
+  userAnswers,
+  startingTime,
+}) => {
   let motivation;
   let color;
   if (!isTimeRunning && userAnswers.length === 0) {
@@ -35,8 +40,8 @@ const TotalStates = ({ isTimeRunning, timeRemaining, userAnswers }) => {
 
   let tracker;
   if (timeRemaining === 0) {
-    tracker = `Time's up! That's ${userAnswers.length} states!`;
-  } else if (timeRemaining === 360) {
+    tracker = `Time's up! You remembered ${userAnswers.length} states!`;
+  } else if (timeRemaining === startingTime) {
     tracker = "FYI. There's only 50 states, not 56.";
   } else {
     tracker = `You've guessed ${userAnswers.length} / 50 states!`;
@@ -44,8 +49,10 @@ const TotalStates = ({ isTimeRunning, timeRemaining, userAnswers }) => {
 
   return (
     <div className="total-container">
-      <h3>{tracker}</h3>
-      <p style={{ color }}>{motivation}</p>
+      <h3 className="total-title">{tracker}</h3>
+      <p className="total-subtitle" style={{ color }}>
+        {motivation}
+      </p>
     </div>
   );
 };
@@ -54,6 +61,7 @@ TotalStates.propTypes = {
   isTimeRunning: PropTypes.bool.isRequired,
   timeRemaining: PropTypes.number.isRequired,
   userAnswers: PropTypes.array.isRequired,
+  startingTime: PropTypes.number.isRequired,
 };
 
 export default TotalStates;
