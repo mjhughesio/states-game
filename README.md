@@ -1,7 +1,17 @@
 # states-game
 
-- Created with React
+## Description
+
+- Quiz game - Try to name all 50 U.S. states in less than 6 minutes!
 - Inspired by the episode of Friends: _"The One Where Chandler Doesn't Like Dogs"_
+
+## Languages
+
+- JavaScript, HTML & CSS
+
+## Framework
+
+- React
 
 ---
 
